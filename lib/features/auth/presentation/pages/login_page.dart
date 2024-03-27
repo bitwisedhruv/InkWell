@@ -44,6 +44,7 @@ class _LoginPageState extends State<LoginPage> {
               AuthField(
                 hintText: 'Email',
                 controller: emailController,
+                textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(
                 height: 15,
@@ -52,11 +53,15 @@ class _LoginPageState extends State<LoginPage> {
                 hintText: 'Password',
                 isObscure: true,
                 controller: passwordController,
+                textInputType: TextInputType.visiblePassword,
               ),
               const SizedBox(
                 height: 20,
               ),
-              const AuthGradientButton(buttonText: 'Sign in'),
+              AuthGradientButton(
+                buttonText: 'Sign in',
+                onPressed: () {},
+              ),
               const SizedBox(
                 height: 20,
               ),

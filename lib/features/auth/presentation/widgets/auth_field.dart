@@ -4,11 +4,13 @@ class AuthField extends StatelessWidget {
   final String hintText;
   final bool isObscure;
   final TextEditingController controller;
+  final TextInputType textInputType;
   const AuthField({
     super.key,
     required this.hintText,
     this.isObscure = false,
     required this.controller,
+    required this.textInputType,
   });
 
   @override
