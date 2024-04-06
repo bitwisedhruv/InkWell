@@ -9,6 +9,7 @@ class BlogModel extends Blog {
     required super.imageUrl,
     required super.topics,
     required super.updatedAt,
+    super.username,
   });
 
   BlogModel copyWith({
@@ -19,6 +20,7 @@ class BlogModel extends Blog {
     String? imageUrl,
     List<String>? topics,
     DateTime? updatedAt,
+    String? username,
   }) {
     return BlogModel(
       id: id ?? this.id,
@@ -28,6 +30,7 @@ class BlogModel extends Blog {
       imageUrl: imageUrl ?? this.imageUrl,
       topics: topics ?? this.topics,
       updatedAt: updatedAt ?? this.updatedAt,
+      username: username ?? this.username,
     );
   }
 
@@ -53,7 +56,7 @@ class BlogModel extends Blog {
       topics: List<String>.from(map['topics'] ?? []),
       updatedAt: map['updated_at'] == null
           ? DateTime.now()
-          : DateTime.parse(map['updatedAt']),
+          : DateTime.parse(map['updated_at']),
     );
   }
 }
